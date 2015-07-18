@@ -1,0 +1,16 @@
+{
+  "TileCollection" : [
+    {
+      "icon" : "settings"
+      "type" : "Create",
+      "title" : "Create Purchase Order",
+      "info" : "890€ Open Budget",
+      "infoState" : "Success"
+    },
+    {
+      "icon" : "bar-chart",
+      "title" : "Relatório de Faturamento",
+      "infoState" : Success
+    }
+  ]
+}

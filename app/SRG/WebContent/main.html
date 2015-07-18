@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html data-sap-ui-dk-category="Controls/Complex"
+	data-sap-ui-dk-controls="sap.viz.ui5.VizContainer">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+
+
+<script type="text/javascript" src="cordova.js"></script>
+
+<script>
+	document.addEventListener("intel.xdk.device.ready", function() {
+		intel.xdk.device.hideSplashScreen();
+	}, false);
+</script>
+
+<script
+	src="https://sapui5.netweaver.ondemand.com/resources/sap-ui-core.js"
+	id="sap-ui-bootstrap"
+	data-sap-ui-libs="sap.m,sap.ui.ux3,sap.ui.table,sap.viz"
+	data-sap-ui-theme="sap_bluecrystal">
+	
+</script>
+
+<!--//"resources/sap-ui-core.js"  sap.ui.ux3,sap.ui.table,sap.viz  only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+
+<script>
+	//Permite acessar os arquivos da view
+	//jQuery.sap.require("sap/ui/thirdparty/d3");
+	sap.ui.localResources("srg");
+
+	var view_principal = sap.ui.view({
+		id : "view_princ",
+		viewName : "srg.principal",
+		type : sap.ui.core.mvc.ViewType.JS
+	});
+	var view_relatorio_faturamento = sap.ui.view({
+		id : "view_relat_fat",
+		viewName : "srg.relatorioFaturamento",
+		type : sap.ui.core.mvc.ViewType.JS
+	});
+
+	var app = new sap.m.App("main_container", {
+		height : "100%",
+		width : "100%",
+		visible : true,
+		pages : [ view_principal, view_relatorio_faturamento ],
+	});
+
+	var shell = new sap.m.Shell("shell", {
+		app : app,
+	});
+
+	shell.placeAt("content");
+</script>
+
+</head>
+<body class="sapUiBody" role="application">
+	<div id="content"></div>
+</body>
+</html>
